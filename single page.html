@@ -1,0 +1,1848 @@
+ <html>
+    
+    <head>
+        <title>FOOD WEBSITE</title>
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+            /*navbar styling start here*/
+            .lines{
+            height: 40px;
+            width: 50px;
+            display: none;
+            /* border: red solid 2px; */
+            }
+            .line{
+            width: 48px;
+            height: 5px;
+            border-radius: 10px;
+            /* background-color: black;
+             */
+             background-image: linear-gradient(to right,red,green,tan);
+             border: 0.5px solid black;
+            }
+            .all-lines{
+            height: 40px;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            }
+            .check{
+            height: 50px;
+            width: 50px;
+            border: 2px solid red; 
+            opacity:0;
+            }
+            .navbar{
+            position:fixed;
+            background-color: aliceblue;
+            z-index: 1;
+            top: 0px;
+            background-color: rgb(207, 204, 204);
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+            /* position:absolute; */
+            }
+            .menu{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            }
+            .menu a{
+            text-decoration: none;
+            }
+            .navbar-name{
+            color: blue;
+            }
+            .navbar-name span{
+            color: red;
+            }
+                
+            /*navbar styling end here*/
+
+            /*carouser styling start here*/
+                .carouser-image{
+                height: 350px;
+                width: 100%;
+                position: relative;
+                margin-top: 100px;
+                }
+                .carouser-image img{
+                height: 100%;
+                width: 100%;
+                }
+                .carouser-data{
+                position: absolute;
+                top: 10px;
+                color: azure;
+                margin-left: 1250px;
+                }
+                .dots{
+                height: 25px;
+                width: 160px;
+                position: absolute;
+                top: 50%;
+                left: 45%;
+                display: flex;
+                justify-content: space-evenly;
+                }
+                .dot{
+                height: 20px;
+                width: 20px;
+                border: 2px solid black;
+                background-color: aliceblue;
+                border-radius: 50%;
+                }
+            /* carouser styling end here*/
+
+            /*about styling start*/
+                .about{
+                display: flex;
+                margin-top: auto;
+                 /* border: 2px solid red;  */
+                 
+                transform: translateX(-50%);
+                position: relative;
+                left: 50%;
+                }
+                .data{
+                height: 400px;
+                width: 40%;
+                margin-left: 10px;
+                /* border: 2px solid green; */
+                /* border: 2px solid red; */
+               
+                }
+                .about-image{
+                height: 400px;
+                width: 40%;
+                /* border: 2px solid violet; */
+                }
+                
+                
+            /*about styling end*/
+
+            /*category styling start*/
+                .water-category{
+                height:200px;
+                width:300px;
+                position: relative;
+                margin: 10px;
+               
+                }
+                .water-category img{
+                height: 100%;
+                width: 100%;
+                border-radius: 10%;
+                /* border: 2px solid black; */
+                box-shadow:2px 2px 20px black;
+
+                }
+                .fast-foodscategory{
+                height:200px;
+                width:300px;
+                position: relative;
+                 margin: 10px;
+
+                }
+                .fast-foodscategory img{
+                height: 100%;
+                width: 100%;
+                border-radius: 10%;
+                box-shadow:2px 2px 20px black;
+                
+                }
+                .foods-category{
+                height:200px;
+                width:300px;
+                 position: relative;
+                 margin: 10px;
+                }
+                .foods-category img{
+                height: 100%;
+                width: 100%;
+                border-radius: 10%;
+               box-shadow:2px 2px 20px black;
+                }
+                .sweets-category{
+                height:200px;
+                width:300px;
+                position: relative;
+                margin: 10px;
+                }
+                .sweets-category img{
+                height: 100%;
+                width: 100%;
+                border-radius: 10%;
+                box-shadow:2px 2px 20px black;
+                }
+                .catergory{
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 10px;
+                }
+                .cat{
+                    background-color:lightcyan;
+                    padding: 10px 0px 20px;
+
+                }
+                .category_data{
+                    /* border: 2px solid black; */
+                    /* background-color: aqua; */
+                    position: absolute;
+                    top: 140px;
+                    left: 20px;
+                }
+                .category_heading{
+                    color: black;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+            .category_title{
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+           /*category styling end*/
+
+           /*inner and outer categoray styling start*/
+
+           .drinks-inner, .fast-foodinner, .food-inner, .sweets-inner{
+                display: flex;
+                flex-wrap: wrap;
+           }
+
+            .sweets-container, .foods-container, .fast-foods-container{
+                display: none;
+            }
+
+          .drinks-container{
+            display: block;
+            }
+            /*inner and outer categoray styling end*/
+            
+            .item-image{
+                height: 150px;
+                width: 150px;
+                border: black 2px solid;
+                border-radius: 50%;
+            }
+            .item-image img{
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+            }
+            .item{
+                display: flex;
+                width: 480px;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 8px;
+
+            }
+            .item-details{
+            width: 300px;
+            }
+            .item-btn{
+                margin-bottom: 12px;
+                justify-content: space-around;
+                display: flex;
+            }
+            .item-name{
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .item-price{
+                margin: 5px;
+
+            }
+            .item-desc{
+                margin: 5px;
+
+            }
+            .order-btn{
+                background-image: linear-gradient(to right,red ,white);
+                height: 25px;
+                border-radius: 10%;
+                width: 120px;
+
+            }
+            .order-btn:hover{
+                background-image: linear-gradient(to right,green ,yellow);
+                font-weight: bold;
+
+            }
+            .addcart-btn{
+                background-image: linear-gradient(to right,green ,yellow);
+                height: 25px;
+                border-radius: 10%;
+                width: 120px;
+            }
+            .addcart-btn:hover{
+                background-image: linear-gradient(to right,red ,white);
+                font-weight: bold;
+
+            }
+            .order_heading{
+                /* border: 2px solid red; */
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            /*order box stylish start*/
+                .order-box{
+                border: 4px solid red;
+                height: 650px;
+                width: 400px;
+                border-radius: 5%;
+                display: none;
+                background-color: rgb(238, 228, 228);
+                position: fixed;
+                top: 59%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+                .order-item{
+                display: flex;
+                justify-content: space-around;
+            }
+               .order-image{
+                height: 190px;
+                width: 190px;
+                border-radius: 5%;
+            }
+               .order-image img{
+                height: 100%;
+                width: 100%;
+                border-radius: 5%;
+            }
+                .order-detail{
+                height: 190px;
+                width: 190px;
+                border: 2px solid black;
+                background-color:rgb(250, 250, 190);
+                }
+                .order_heading_right{
+                    text-align: center;
+                    width: 50px;
+                    /* border: 2px solid black; */
+                    margin-right: 10px;
+                }
+                .order_heading_right:hover{
+                    background-color: red;
+                }
+                .order_heading_left{
+                                       
+                    padding-left: 10px;
+                }
+                .order-box-btn{
+                    background-color: red;
+                }
+                 .order-box-btn:hover{
+                    background-image: linear-gradient(to right, white,red );
+                 }
+             /*order box stylish end*/
+              
+            /*feedback stylish start*/
+            .user-details{
+                height: 100px;
+                width: 150px;
+            }
+                .user-img{
+                height: 150px;
+                width: 150px;
+            }
+                .user-img img{
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+            }
+                .user{
+                height: 320px;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color:lightcyan;
+                padding: 10px 0px 20px;
+                /* position: relative; */
+            /* justify-content: space-evenly; */
+              /* border: solid 2px red;   */
+            }
+                .star{
+                font-size:40px ;
+                color: blue;
+                margin: 0%;
+            }
+                .startwo{
+                color:burlywood;
+                font-size: 40px;
+            }
+                .username{
+                text-align: center;
+                margin: 0%;
+            }
+                .revieves{
+                display: flex;
+                position: relative;
+                width: 100%;
+                /* overflow-x: scroll; */
+               
+            }
+            /*feedback stylish end*/
+
+            /*contact stylish start*/
+                .contact{
+                height: 380px;
+                width: 950px; 
+                display: flex;
+                justify-content: space-between;
+                /* margin: auto; */
+                 /* background-color: aqua; 
+                border: 2px solid black; */
+                transform: translateX(-50%);
+                position: relative;
+                left: 50%;
+            }
+            
+                .feedback-image{
+                height: 290px;
+                width: 450px;
+                margin-left: 10px;
+                
+                /* border: 4px solid pink; */
+            }
+                .feedback-image img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5%;
+            }
+            .cont{
+               text-align: center;
+            }  
+                .contact-us{
+                /* border: 4px solid green;   */
+                width: 450px;
+                /* margin-left: 50px; */
+                height: 380px;
+            }
+                .y{
+                height: 100px;
+                width: 450px;
+                border: 1px solid black;
+            }
+                .x{
+                height: 35px;
+                width: 100%;
+                border: 1px solid black;
+
+            }
+                .p{
+                background-image: linear-gradient(to left,pink,red);
+                height: 25px;
+                width: 120px;
+                border-radius: 10%;
+            }
+                .p:hover{
+                background-image: linear-gradient(to left,red,white);
+                font-size: bold;
+            }
+            /*contact stylish end*/
+
+            /*footer stylish start*/
+                .icons{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                height: 60px;
+                width: 500px;
+            }
+                .icon{
+                height: 60px;
+                width: 60px;
+            }
+                .icon img{
+                height: 60%;
+                width: 60%;
+            }
+                .footer{
+                display: flex;
+                align-items:center;
+                flex-direction: column;
+                height: 110px;
+                width: 100%;
+                background-color: black;
+            }
+                .footer-name{
+                margin-bottom: 7px;
+                color: aliceblue;
+            }
+                .footer-link{
+                margin-top: -15px;
+                color: aliceblue;
+            }
+                .footer-link a{
+                color: aliceblue;
+                text-decoration: none;
+            }
+            /*footer stylish end*/
+               /* .cart-icon{
+                    position: relative;
+                    font-size: 5px;
+                   } */
+                    .menu_icon-image{
+                        width: 40px;
+                        height: 40px;
+                         margin-top: 20px;
+                        /* border: 2px solid black; */
+                    }
+                    .nav-icons{
+                        display: flex;
+                        justify-content: space-evenly;
+                        width: 620px;
+
+                        
+                         /* border: 2px solid red;  */
+                    }
+                    .menu_icon{
+                        display: flex;
+                        /* margin-top: 10px;
+                        margin-bottom: 10px; */
+                        width: 120px;
+                        height: 100px;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: column;
+                         /* border: 2px solid red;  */
+                        text-decoration: none;
+                    }
+                #count{
+                    border: 2px solid red;
+                    position: absolute;
+                    top: 20px;
+                    left:52px;
+                    background-color: rgb(245, 231, 214);
+                    color: white;
+                    height: 15px;
+                    width: 15px;
+                    background-color: black;
+                    border-radius: 50%;
+                   
+                }
+                .cart_nav{
+                    position: relative;
+                }
+                
+                /* .menu_icon{
+                    align-items: center;
+                    position: relative;
+                    border: 2px solid red;
+                    
+                    
+                    
+                } 
+                .menu_icon_inner{
+                 
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .cart_icon{
+                    display: flex;
+                    flex-direction: column;
+                    } */
+                    .rev-btn{
+                        position: absolute;
+                    }
+                    .left-btn{
+                        top: 50%;
+                        left: 0px;
+                        /* background-color: black; */
+                    }
+                    .right-btn{
+                        top: 50%;
+                        right: 20px;
+                    }
+                    
+                    
+                
+                
+                @media(max-width:750px){
+                    .lines{
+                        position: absolute;
+                        top: 14px;
+                        right: 18px;
+                        display: block;
+                    }
+                    .check{
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        z-index: 1;
+                        opacity: 0;
+                        display: block;
+                    }
+                    .nav-icons{
+                        display: none;
+                        position:absolute;
+                        top: 80px;
+                        right: 0px;
+                        margin-bottom: 0;
+                        margin-left: -2.5px;
+                        width: 120px;
+                        height: 600px;
+                        background-color: white;
+                       
+                    }
+                    .check:checked ~.nav-icons{
+                        display: block;
+                    }
+                    .check:checked ~.lines .all-lines .line1{
+                        transform-origin: 0% 0%;
+                        transform: rotate(42deg);
+                        background-image: linear-gradient(to right,tan,green,red);
+                    }
+                    .check:checked ~.lines .all-lines .line2{
+                    opacity: 0;
+                    }
+                    .check:checked ~.lines .all-lines .line3{
+                    transform-origin: 0% 0%;
+                    transform: rotate(-48deg);
+                    background-image: linear-gradient(to right,tan,green,red);
+                    }
+                    .about{
+                    display: grid;
+                    height: 800px;
+                    width: 90%;
+                    }
+                    .data{
+                    flex-direction: column;
+                    width: 100%;
+                    height: 350px;
+                    margin-left: 0px;
+                    }
+                    .about-image{
+                    width: 100%;
+                    } 
+                    .revieves{
+                    /* flex-wrap: wrap; */
+                    flex-direction: column;
+                    align-items: center;
+                    }
+                    
+                    .contact{
+                    flex-direction: column;
+                    height: 580px;
+                    width: 500px;
+                    align-items: center;
+                    }
+                    .catergory{
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .user{
+                        align-items: center;
+                        flex-wrap: wrap;
+                    }
+                    .all-revieves{
+                    background-color: lightcyan;
+                    }
+                    #count{
+                    left:62px;
+                    }
+                    .item{
+                        /* border: 2px solid red; */
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .item-details{
+                        text-align: center;
+                    }
+                    .item-image{
+                        width: 200px;
+                        border-radius: 20px;
+                    }
+                     .item-image img{
+                    border-radius: 20px;
+                    }
+                    .drinks-inner{
+                    justify-content:center;
+                    }
+                    }         
+        </style>
+
+        <script>
+            //function call start//
+            function drinks(){
+                document.getElementById("drinks-id").style.display="block";
+                document.getElementById("fast-foods-id").style.display="none";
+                document.getElementById("foods-id").style.display="none";
+                document.getElementById("sweets-id").style.display="none";
+                }
+
+            function fast_foods(){
+                document.getElementById("drinks-id").style.display="none";
+                document.getElementById("fast-foods-id").style.display="block";
+                document.getElementById("foods-id").style.display="none";
+                document.getElementById("sweets-id").style.display="none";
+                }
+
+            function foods(){
+                document.getElementById("drinks-id").style.display="none";
+                document.getElementById("fast-foods-id").style.display="none";
+                document.getElementById("foods-id").style.display="block";
+                document.getElementById("sweets-id").style.display="none";
+                }
+
+            function sweets(){
+                document.getElementById("drinks-id").style.display="none";
+                document.getElementById("fast-foods-id").style.display="none";
+                document.getElementById("foods-id").style.display="none";
+                document.getElementById("sweets-id").style.display="block";
+                }
+
+            function order(n,p,dis,desc,im){
+                document.getElementById("order-box-id").style.display="block";
+                document.getElementById("change-image").src=im;
+                document.getElementById("change-name").innerHTML=n;
+                document.getElementById("change-price").innerHTML=p;
+                document.getElementById("change-discount").innerHTML=dis;
+                document.getElementById("change-desc").innerHTML=desc;
+            }
+
+            function closex(){
+                document.getElementById("order-box-id").style.display="none";
+            }
+            function cart(x){
+                let v = document.getElementById(x).innerHTML;
+                let k=x;
+                localStorage.setItem(k,v);
+                alert(x+" has added succesfully  ");
+                let l = localStorage.length;
+                document.getElementById("count").innerHTML=l;
+            }
+            function axz(){
+                let l = localStorage.length;
+                document.getElementById("count").innerHTML=l;
+            }
+            function left_btn(){
+
+            }
+             function right_btn(){
+
+            }
+           </script>
+           
+            <!--function call end-->
+        </head>
+   
+    <body onload="axz();">
+    <!--navbar html start-->
+    <div class="navbar" >
+
+    
+
+    <h1 class="navbar-name">COFFEE <span class="shop" >SHOP</span></h1>
+    <input type="checkbox" class="check">
+   <div class="lines">
+        <div class="all-lines">
+            <div class="line1 line"></div>
+            <div class="line2 line"></div>
+            <div class="line3 line"></div>
+        </div>
+    </div>
+        <!-- navbar icon start-->
+        <div class="nav-icons">
+        <a href="#homexy" class="menu_icon">
+        <img src="home.png" class="menu_icon-image">
+        <span>HOME</span></a>
+        
+        <a href="#add-cartxu" class="menu_icon cart_nav">
+        <img src="add-to-cart.png" class="menu_icon-image">
+        <span>CART</span><div id="count">0</div></a>
+        
+        <a href="#menux" class="menu_icon">
+        <img src="bullet-point.png" class="menu_icon-image">
+        <span>MENU</span></a>
+         
+
+        <a href="#profilexk" class="menu_icon">
+        <img src="profile.png" class="menu_icon-image">
+        <span>PROFILE</span></a>
+            
+        <a href="#reviwesxp" class="menu_icon">
+        <img src="rating.png"  class="menu_icon-image">
+        <span>REVIWES</span></li></a>
+            
+        <a href="#contxx" class="menu_icon"> 
+        <img src="contact.png" class="menu_icon-image" ><span>CONTACT</span></a>
+            
+            <!--navbar-icon end-->
+ 
+    </div>
+    
+    
+</div>
+<!--navbar html end-->
+
+        <!--carouser html start-->
+        <div class="carouser-container" id="homexy" id="home_id"  >
+        <div class="carouser-image one">
+        <img src="D:\html\Food Website\coffee corousel.jpg">
+        <div class="carouser-data">
+        <h1>price cash alert</h1>
+        <h2>upto20%off</h2>
+        <p>min.&#8377;150 cashback</p>
+        <p>upto 5%off</p>
+        </div>
+        </div>
+
+        <div class="carouser-image two">
+        <img src="D:\html\coffee.jpg">
+        <div class="carouser-data">
+        <h1> flat 250 cashback</h1>
+        <h2>upto20%off</h2>
+        <p>starting&#8377;3799</p>
+        <p>upto 5%off</p>
+        </div>
+        </div>
+
+        <div class="carouser-image three">
+        <img src="D:\html\coffee 1.jpg">
+        <div class="carouser-data">
+        <h1>price cash alert</h1>
+        <h2>upto10%off</h2>
+        <p>min.&#8377;100 cashback</p>
+        <p>upto 50%off</p>
+        </div>
+        </div>
+
+        <div class="carouser-image four">
+        <img src="D:\html\coffe.jpg">
+        <div class="carouser-data">
+        <h1>starting.&#8377;999</h1>
+        <h2>upto 5%off </h2>
+        <p>Qubo</p>
+        <p>10%instant discount</p>
+        </div>
+        </div>
+
+        <div class="carouser-image five">
+        <img src="D:\html\cold coffee.jpg">
+        <div class="carouser-data">
+        <h1>weekend bonaza</h1>
+        <h2>flat 250%cashback</h2>
+        <p>min.purchase of 2500</p>
+        <p>10% instant discount</p>
+        </div>
+        </div>
+
+        <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        </div>   
+    </div>
+<!--carouser html end-->
+
+<!--about section start-->
+
+        <h1 style="text-align: center;" id="profilexk">ABOUT</h1>
+        
+        <div class="totally-about" id="about_id">
+        <div class="about">
+        <img src="cold coffee.jpg" class="about-image">
+
+        <div class="data">
+        <h1>About Our Website</h1>
+        <h2>This is a Cafe</h2>
+        <p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other.To change the way a picture fits in your document, click it and a button for layout options appears next to it. When you work on a table, click where you want to add a row or a column, and then click the plus sign. Reading is easier, too, in the new Reading view. You can collapse parts of the document and focus on the text you want. If you </p>
+        </div>
+        </div>
+        </div>
+<!--about section end-->
+
+<!--category html start-->
+<div class="cat" id="menux">
+    <h1 style="text-align: center;" id="menu_id">FOOD CATEGORY</h1>
+    <div class="catergory">
+
+        <div class="water-category" onclick="drinks();">
+        <img src="water.jpeg">
+        <div class="category_data">
+            <span class="category_heading" style="text-shadow: 2px 2px 4px white;">Drinks</span><br>
+            <span class="category_title" style="text-shadow: 2px 2px 4px white;">Best drinks offer.</span>
+        </div>
+        </div>
+
+
+        <div class="fast-foodscategory" onclick="fast_foods();">
+        <img src="burger2.jpeg">
+        <div class="category_data">
+            <span class="category_heading"  style="color: white; text-shadow: 2px 2px 4px black;">Fast-foods</span><br>
+            <span class="category_title" style="color: white; text-shadow: 2px 2px 4px black;">Best Fast-foods offer.</span>
+        </div>
+        </div>
+
+        <div class="foods-category" onclick="foods();">
+        <img src="chole.jpeg">
+        <div class="category_data">
+            <span class="category_heading" style="color: white; text-shadow: 2px 2px 4px black;">Foods</span><br>
+            <span class="category_title" style="color: white; text-shadow: 2px 2px 4px black;">Best foods offer.</span>
+        </div>
+        </div>
+
+
+        <div class="sweets-category" onclick="sweets();">
+        <img src="gulab.jpeg">
+        <div class="category_data">
+            <span class="category_heading" style="color: white; text-shadow: 2px 2px 4px black;">Sweets</span><br>
+            <span class="category_title" style="color: white; text-shadow: 2px 2px 4px black;">Best sweets offer.</span>
+        </div>
+        </div>
+
+    </div>
+    </div>
+    <h1 style="text-align: center;" id="item_id">FOOD ITEMS</h1>
+<!-- category html end-->
+
+<!--drinks html start-->
+    <div class="drinks-container" id="drinks-id">
+    <div class="drinks-inner">
+
+        <div id="masala_tea">
+        <div class="item" >
+        <div class="item-image" >
+        <img src="D:\html\Food Website\masala tea.jpeg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MASALA TEA</h1>
+        <h3 class="item-price">price: 90 upto 30%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MASALA TEA',90,30,'MASALA TEAdesc','D:\\html\\Food Website\\masala tea.jpeg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('masala_tea');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="mineral-water">
+        <div class="item" >
+        <div class="item-image" >
+        <img src="D:\html\Food Website\mineral water.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MINERAL WATER</h1>
+        <h3 class="item-price">price: 80 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MINERAL WATER',80,10,'MINERAL WATERdesc','D:\\html\\Food Website\\mineral water.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('mineral-water');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div id="coffee">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\coffee.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">COFFEE</h1>
+        <h3 class="item-price">price: 50 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('COFFEE',50,10,'COFFEEdesc','D:\\html\\Food Website\\coffee.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('coffee');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="cold-coffee">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\cold coffee.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">COLD COFFEE</h1>
+        <h3 class="item-price">price: 23 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('COLD COFFEE',23,10,'COLD COFFEEdesc','D:\\html\\Food Website\\cold coffee.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('cold-coffee');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="green-tea">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\green tea.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">GREEN TEA</h1>
+        <h3 class="item-price">price: 65 upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('GREEN TEA',65,20,'GREEN TEAdesc','D:\\html\\Food Website\\green tea.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('green-tea');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="coke">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\coke.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">COKE</h1>
+        <h3 class="item-price">price: 70 upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('COKE',70,20,'COKEdesc','D:\\html\\Food Website\\coke.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('coke');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+         <div id="mango-juice">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\mango juice.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MANGO JUICE</h1>
+        <h3 class="item-price">price: 50 upto 30%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MANGO JUICE',70,10,'MANGO JUICEdesc','D:\\html\\Food Website\\mango juice.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('mango-juice');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+<!--drinks html end-->
+
+<!--fast-food html start-->
+    <div class="fast-foods-container" id="fast-foods-id">
+    <div class="fast-foodinner">
+
+        <div id="burger">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\burger.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">BURGER</h1>
+        <h3 class="item-price">price: 70 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('BURGER',70,10,'BURGERdesc','D:\\html\\Food Website\\burger.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('burger');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="momos">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\steam momo.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name"> STEAM MOMOS</h1>
+        <h3 class="item-price">price: 125 upto 20.8%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('STEAM MOMOS',125,20.8,'STEAM MOMOSdesc','D:\\html\\Food Website\\steam momo.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('momos');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="onion-rings">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\onion rings.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">ONION RINGS</h1>
+        <h3 class="item-price">price: 100 upto 21%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('ONION RINGS',100,21,'ONION RINGSdesc','D:\\html\\Food Website\\onion rings.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('onion-rings');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="pasta">
+        <div class="item">
+        <div class="item-image">
+        <img src="D:\html\Food Website\pasta.png">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">PASTA</h1>
+        <h3 class="item-price">price: 60 upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('PASTA',60,20,'PASTAdesc','D:\\html\\Food Website\\pasta.png')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('pasta');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="chowmein">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\chowmein.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">CHOWMINE</h1>
+        <h3 class="item-price">price: 89 upto 24%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn"  onclick="order('CHOWMINE',89,24,'CHOWMINEdesc','D:\\html\\Food Website\\chowmein.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('chowmine');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="pizza">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\pizza.png">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">PIZZA</h1>
+        <h3 class="item-price">price: 220 upto 19%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('PIZZA',220,19,'PIZZAdesc','D:\\html\\Food Website\\pizza.png')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('pizza');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="manchurian">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\manchurian.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MANCHURIAN</h1>
+        <h3 class="item-price">price: 150 upto 15%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn"onclick="order('MANCHURIAN',150,15,'MANCHURIANdesc','D:\\html\\Food Website\\manchurian.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('manchurian');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="spring-roll">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\spring rolls.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">SPRING-ROLL</h1>
+        <h3 class="item-price">price: 140 upto 13%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('SPRING-ROLL',140,13,'SPRING-ROLLdesc','D:\\html\\Food Website\\spring rolls.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('spring-roll');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="french-fries">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\french fries.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">FRENCH-FRIES</h1>
+        <h3 class="item-price">price: 140 upto 13%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('FRENCH-FRIES',140,13,'FRENCH-FRIES desc','D:\\html\\Food Website\\french fries.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('french-fries');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="sandwich">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\sandwich.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">SANDWICH</h1>
+        <h3 class="item-price">price: 140 upto 13%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('SANDWICH',140,13,'SANDWICH desc','D:\\html\\Food Website\\sandwich.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('sandwich');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+    </div>
+    </div>
+<!--fast-foods html end-->
+
+<!--foods html start-->
+    <div class="foods-container" id="foods-id">
+    <div class="food-inner">
+
+        <div id="aloo-pratha">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\aaloo paratha.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">ALOO-PRATHA</h1>
+        <h3 class="item-price">price: 350 upto 30%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('ALOO-PRATHA',200,10,'ALOO-PRATHA desc','D:\\html\\Food Website\\aaloo paratha.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('aloo-pratha');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="veg-biryani">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\veg biryani.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">VEG BIRYANI</h1>
+        <h3 class="item-price">price: 200 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('VEG BIRYANI',200,10,'VEG BIRYANI desc','D:\\html\\Food Website\\veg biryani.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('veg-biryani');">ADD TO CART</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div id="shahi-panner">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\shahi paneer.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">SHAHI PANNER</h1>
+        <h3 class="item-price">price: 250 upto 30%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('SHAHI PANNER',250,30,'SHAHI PANNER desc','D:\\html\\Food Website\\shahi paneer.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('shahi-panner');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="dal-makhni">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\dal makhni.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">DAL MAKHNI</h1>
+        <h3 class="item-price">price: 100 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('DAL MAKHNI',100,10,'DAL MAKHNI desc','D:\\html\\Food Website\\dal makhni.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('dal-makhni');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="khadi-pakora">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\khadi pakora.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">KHADI-PAKORA</h1>
+        <h3 class="item-price">price: 110 upto 30%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('KHADI-PAKORA',110,30,'KHADI-PAKORA desc','D:\\html\\Food Website\\khadi pakora.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('khadi-pakora');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="jeera-rice">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\jeera rice.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">JEERA RICE</h1>
+        <h3 class="item-price">price: 170 upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('JEERA RICE',170,20,'JEERA RICE desc','D:\\html\\Food Website\\jeera rice.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('jeera-rice');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="chole-bhature">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\chhole bhature.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">CHOLE BHATURE</h1>
+        <h3 class="item-price">price: 99 upto 32%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('CHOLE BHATURE',99,32,'CHOLE BHATURE desc','D:\\html\\Food Website\\chhole bhature.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('chole-bhature');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="mix-veg">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\mix veg.jpg" alt="mix veg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MIX VEG</h1>
+        <h3 class="item-price">price: 250 upto 25%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MIX VEG',250,25,'MIX VEG desc','D:\\html\\Food Website\\mix veg.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('mix-veg');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="aloo-gobhi">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\aloo gobi.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">ALOO-GOBHI</h1>
+        <h3 class="item-price">price: 140 upto 13%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('ALOO-GOBHI',140,13,'ALOO-GOBHI desc','D:\\html\\Food Website\\aloo gobi.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('aloo-gobhi');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+    </div>
+    </div>
+<!--foods html end-->
+
+<!--sweets html start-->
+    <div class="sweets-container" id="sweets-id">
+    <div class="sweets-inner">
+
+        <div id="gulab-jamun">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\gulab jamun.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">GULAB JAMUN</h1>
+        <h3 class="item-price">price: 59 upto 33%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('GULAB JAMUN',59,33,'GULAB JAMUN desc','D:\\html\\Food Website\\gulab jamun.jpg');">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('gulab-jamun');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="jalebi">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\jalebi.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">JALEBI</h1>
+        <h3 class="item-price">price: 99 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('JALEBI',99,10,'JALEBI desc','D:\\html\\Food Website\\jalebi.jpg');">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('jalebi');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div id="rasmalai">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\rasmalai.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">RASMALAI</h1>
+        <h3 class="item-price">price: 89 upto 60%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('RASMALAI',89,60,'RASMALAI desc','D:\\html\\Food Website\\rasmalai.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('rasmalai');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="kheer">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\kheer.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">KHEER</h1>
+        <h3 class="item-price">price: 190 upto 50%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('KHEER',190,50,' KHEER desc','D:\\html\\Food Website\\kheer.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('kheer');">ADD TO CART</button>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="gazar-halwa">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\gajar halwa.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">GAZAR-HALWA</h1>
+        <h3 class="item-price">price: 200 upto 54%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('GAZAR-HALWA',200,54,' GAZAR-HALWA desc','D:\\html\\Food Website\\gajar halwa.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('gazar-halwa');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="kaju-katli">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\kaju katli.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">KAJU KATLI</h1>
+        <h3 class="item-price">price: 69 upto 10%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('KAJU KATLI',69,10,'KAJU KATLI desc','D:\\html\\Food Website\\kaju katli.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('kaju-katli');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div id="berfi">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\berfi.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">BERFI</h1>
+        <h3 class="item-price">price: 110 upto 50%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('BERFI',110,50,'BERFI desc','D:\\html\\Food Website\\berfi.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('berfi');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="motichur-laddu">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\motichoor laddu.png">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MOTICHOOR-LADDU</h1>
+        <h3 class="item-price">price: 250/kg upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MOTICHOOR-LADDU',250,20,'MOTICHOOR-LADDU desc','D:\\html\\Food Website\\motichoor laddu.png')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('motichur-laddu');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="milk-cake">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\milk cake.png">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MILK CAKE</h1>
+        <h3 class="item-price">price: 250/kg upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MILK CAKE',250,20,'MILK CAKE desc','D:\\html\\Food Website\\milk cake.png')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('milk-cake');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="muffins">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\muffins.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">MUFFINS</h1>
+        <h3 class="item-price">price: 250/kg upto 20%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('MUFFINS',250,20,'MUFFINSdesc','D:\\html\\Food Website\\muffins.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('muffins');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="donuts">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\donuts.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">DONUTS</h1>
+        <h3 class="item-price">price: 25 upto 5%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn" onclick="order('DONUTS',25,5,'DONUTS desc','D:\\html\\Food Website\\muffins.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('donuts');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="ice-creams">
+        <div class="item">
+        <div class="item-image" >
+        <img src="D:\html\Food Website\ice creams.jpg">
+        </div>
+        <div class="item-details">
+        <h1 class="item-name">ICE-CREAMS</h1>
+        <h3 class="item-price">price: 25 upto 5%off</h3>
+        <h3 class="item-desc"><b>Description:</b>
+        this cafe are best choice for you,this cafe coffe are very best.</h3> 
+        <div class="item-btn">
+        <button class="order-btn"  onclick="order('ICE-CREAMS',25,5,'ICE-CREAMS desc','D:\\html\\Food Website\\ice creams.jpg')">ORDER NOW</button>
+        <button class="addcart-btn" onclick="cart('ice-creams');">ADD TO CART</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+<!--sweets html end-->
+
+
+<!--order-box html start-->
+    <div class="order-box", id="order-box-id">
+        <h1 class="order_heading"><span class="order_heading_left">COFFEE SHOP</span><span onclick="closex();" class="order_heading_right">X</span></h1>
+        <div class="order-item">
+        <div class="order-image">
+        <img src="D:\html\Food Website\ice creams.jpg" height="200px" width="200px" id="change-image">
+        </div>
+        <div class="order-detail">
+        <p id="change-name">BURGER</p>
+        <p>Price: <span id="change-price">180</span> upto <span id="change-discount">20</span>%off</p>
+        <p><b>Description:</b><span id="change-desc"> The burger very delicious and very tasty burger.</span></p>
+        </div>
+        </div>
+
+            <p>Quantity:      <input type="text"></p>
+            <p>MRP:    <input type="text"></p>
+            <p>Dicount:20%off :- </p>
+            <p>Total paybale amount: <input type="text"></p>
+            <h3>Order details: </h3>
+            NAME. <input type="text"><br><br>
+            MOBILE NO. <input type="text"><br><br>
+            ADDRESS<input type="text"><br><br><br>
+            <button class="order-box-btn">place order</button>
+    </div>
+<!--order-box html end-->
+
+
+<!--reviews html start-->
+    <h1 style="text-align: center;" id="reviwesxp">What Say Our Coustmer</h1>
+    <div class="all-revieves" id="testonomial_id">
+    <div class="revieves" >
+
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+
+            <div class="user">
+            <div class="user-img">
+            <img src="coffe.jpg">
+            </div>
+            <div class="user-details">
+            <h1 class="username">Coffee</h1>
+            <p class="star">&starf;&starf;&starf;&star;
+            </p>
+            <p>coffeeis the best and the cafe are best in this area</p>
+            </div>
+            </div>
+
+           
+
+           
+
+            <button class="rev-btn right-btn">&gt;</button>
+            <button class="rev-btn left-btn">&lt;</button>
+    </div>
+    </div>
+<!--reviwes html end-->
+
+<!--contact html start-->
+        <h1 class="cont" id="contxx">CONTACT US</h1>
+        
+        <div class="contact" id="contact_id">
+            <div class="feedback-image">
+            <img src="coffee.jpg" >
+            </div>
+
+            <div class="contact-us">
+            
+
+            Name <input type="text" class="x" placeholder="here type your name"><br><br>
+            Gmail <input type="email" class="x" placeholder="here type your gmail"><br>
+            Description <br><textarea class="y" placeholder="here type your description"></textarea><br><br>
+            <input type="submit" class="p btn">
+        </div>
+
+        </div>
+
+<!--contact section end-->
+
+<!--footer section start-->
+    <div class="footer">
+            <p class="footer-name">All right reserved &copy2025</p>
+    <div class="icons">
+            <div class="icon">
+            <a href="#"><img src="D:\html\whatsapp.png"></a>
+            </div>
+            <div class="icon">
+             <a href="#"><img src="D:\html\snapchat.png"></a>
+            </div>
+            <div class="icon">
+            <a href="#"><img src="D:\html\instagram.png"></a>
+            </div>
+            <div class="icon">
+            <a href="#"><img src="D:\html\facebook.png"></a>
+            </div>
+            <div class="icon">
+            <a href="#"><img src="D:\html\twitter.png"></a>
+            </div>
+            <div class="icon">
+            <a href="#"><img src="D:\html\linkedin.png"></a>
+            </div>
+    </div>
+            <p class="footer-link"><a href="#">About</a> | <a href="#">privacy policy</a></p>
+    </div>
+<!--footer section end-->
+
+<!--craouser loop start-->
+            <script>
+            index=0;
+            function carouser(){
+
+            let a = document.getElementsByClassName("carouser-image");
+            let b=document.getElementsByClassName("dot");
+            for(let i=0;i<5;i++){
+            a[i].style.display="none";
+            b[i].style.backgroundColor="white";
+            }
+            if(index>4){
+            index=0;
+            }
+            a[index].style.display="block";
+            b[index].style.backgroundColor="red";
+            index++;
+            setTimeout(carouser,3000); //call self every 2 second
+            }
+            carouser(); //first time call
+            </script>
+<!--craouser loop end-->
+    </body>
+    </html>
